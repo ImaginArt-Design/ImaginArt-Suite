@@ -1187,30 +1187,33 @@ p {
     }
 
     .hero-section {
-        padding-top: 90px;
-        padding-bottom: 50px;
+        padding-top: 120px !important;
+        padding-bottom: 40px;
     }
 
     .hero-title { 
-        font-size: 1.75rem;
+        font-size: 1.65rem;
         line-height: 1.25;
+        margin-top: 10px;
     }
 
     .hero-subtitle { 
-        font-size: 0.92rem;
+        font-size: 0.9rem;
         margin-bottom: 20px;
     }
 
     .hero-specs {
         flex-wrap: wrap;
-        gap: 8px 12px;
+        gap: 8px 10px;
         justify-content: center;
-        font-size: 0.78rem;
+        font-size: 0.76rem;
     }
 
     .hero-preview {
         margin-top: 24px;
         border-radius: 10px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .preview-bar {
@@ -1218,19 +1221,25 @@ p {
     }
 
     .preview-title {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
+    }
+
+    .preview-body-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain !important;
     }
 
     .section { 
-        padding: 50px 0; 
+        padding: 45px 0; 
     }
 
     .section-title {
-        font-size: 1.45rem;
+        font-size: 1.4rem;
     }
 
     .section-desc {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 
     .tabs-nav {
@@ -1239,7 +1248,7 @@ p {
         -webkit-overflow-scrolling: touch;
         padding-bottom: 8px;
         justify-content: flex-start;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
     }
 
     .tab-btn {
@@ -1250,21 +1259,48 @@ p {
     }
 
     .tools-grid { 
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+        width: 100%;
     }
 
     .tool-card {
-        padding: 18px;
+        padding: 16px;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .plugin-btn-preview {
+        padding: 8px 10px;
+        gap: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+
+    .plugin-btn-text h3 {
+        font-size: 0.95rem;
+    }
+
+    .plugin-btn-sub {
+        font-size: 0.72rem;
+    }
+
+    .plugin-btn-badge {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+        position: static;
+        margin-left: auto;
     }
 
     .benefits-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
     }
 
     .benefit-card {
-        padding: 20px;
+        padding: 18px;
     }
 
     .install-box {
@@ -1282,6 +1318,18 @@ p {
         padding: 10px;
     }
 
+    .video-player-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+
+    .video-player-wrapper video {
+        object-fit: contain !important;
+    }
+
+    .video-placeholder {
+        padding: 16px;
+    }
+
     .video-info-bar {
         flex-direction: column;
         align-items: center;
@@ -1295,17 +1343,17 @@ p {
     }
 
     .video-tag-item {
-        font-size: 0.76rem;
+        font-size: 0.74rem;
     }
 
     .faq-question {
-        font-size: 0.95rem;
-        padding: 16px;
+        font-size: 0.92rem;
+        padding: 14px;
     }
 
     .faq-answer {
-        font-size: 0.88rem;
-        padding: 0 16px 16px;
+        font-size: 0.86rem;
+        padding: 0 14px 14px;
     }
 
     .footer-content {
