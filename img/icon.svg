@@ -1,0 +1,9 @@
+<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer border - thin stroke -->
+  <rect x="1" y="1" width="21" height="21" stroke="#FFFFFF" stroke-width="1.2" fill="none"/>
+  <!-- 4 inner squares with spacing -->
+  <rect x="3.5" y="3.5" width="7" height="7" fill="#FFFFFF"/>
+  <rect x="12.5" y="3.5" width="7" height="7" fill="#FFFFFF"/>
+  <rect x="3.5" y="12.5" width="7" height="7" fill="#FFFFFF"/>
+  <rect x="12.5" y="12.5" width="7" height="7" fill="#FFFFFF"/>
+</svg>

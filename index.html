@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagin'Art Suite — L'extension d'automatisation pour Adobe Illustrator</title>
+    <meta name="description" content="Automatisez votre flux de travail dans Adobe Illustrator : imposition, vernis sélectif, gabarits packaging, imbrication et export automatique. Conçu pour les graphistes et les ateliers d'impression.">
+    <link rel="icon" type="image/svg+xml" href="img/logo_icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ═══ HEADER / BARRE DE NAVIGATION ═══ -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="brand-logo">
+                    <img src="img/logo_icon.svg" alt="Logo Imagin'Art" class="logo-icon">
+                    <img src="img/logo_text.svg" alt="Imagin'Art" class="logo-text">
+                    <span class="suite-tag">Suite V4.0</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#demo" class="nav-link">Démo Vidéo</a></li>
+                    <li><a href="#outils" class="nav-link">Les Outils</a></li>
+                    <li><a href="#avantages" class="nav-link">Bénéfices</a></li>
+                    <li><a href="#installation" class="nav-link">Installation</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- ═══ HERO SECTION ═══ -->
+    <section class="section hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge-tag">
+                    <span class="pulse-dot"></span>
+                    Version 4.0 disponible — Compatible Windows &amp; macOS
+                </div>
+                
+                <h1 class="hero-title">
+                    Le panneau d'automatisation pensé pour le <span class="highlight">studio et l'atelier graphique.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Imposition de livrets, préparation prépresse, vernis sélectif, gabarits packaging et exports groupés dans Adobe Illustrator. Fini les tâches manuelles répétitives : concentrez-vous sur la création.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        Voir la démo en action
+                    </a>
+                    <a href="#outils" class="btn btn-secondary">
+                        Découvrir les 15 outils intégrés
+                    </a>
+                </div>
+
+                <div class="hero-specs">
+                    <span>⚡ 100% Vectoriel</span>
+                    <span>🖨️ Prépresse &amp; Print Ready</span>
+                    <span>🍏 macOS &amp; 🪟 Windows</span>
+                </div>
+            </div>
+
+            <!-- Aperçu réel de l'extension dans Illustrator -->
+            <div class="hero-preview">
+                <div class="preview-bar">
+                    <div class="preview-dots">
+                        <span class="preview-dot red"></span>
+                        <span class="preview-dot yellow"></span>
+                        <span class="preview-dot green"></span>
+                    </div>
+                    <div class="preview-title">Adobe Illustrator — Imagin'Art Suite v4.0</div>
+                    <div style="width: 48px;"></div>
+                </div>
+
+                <div class="preview-body-image" style="padding:0; background:#12100e; overflow:hidden; border-bottom-left-radius:14px; border-bottom-right-radius:14px;">
+                    <img src="img/suite dans illustrator.png" alt="Imagin'Art Suite dans Adobe Illustrator" style="width:100%; height:auto; display:block; object-fit:contain; filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION DÉMO VIDÉO ═══ -->
+    <section class="section video-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Démonstration en conditions réelles</div>
+                <h2 class="section-title">Voyez la suite en action dans Illustrator</h2>
+                <p class="section-desc">
+                    De la création d'un gabarit de packaging sur mesure à l'imposition d'un livret complet en 3 clics, découvrez comment l'extension accélère votre production quotidienne.
+                </p>
+            </div>
+
+            <div class="video-card">
+                <div class="video-player-wrapper">
+                    <!-- Lecteur vidéo HTML5 si demo.mp4 est placé dans assets/ -->
+                    <video id="demo-video-player" controls style="display:none;">
+                        <source src="assets/demo.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+                    </video>
+
+                    <!-- Zone d'aperçu / Bouton de lecture -->
+                    <div class="video-placeholder" id="video-placeholder-box">
+                        <div class="play-button-big" id="play-demo-btn">▶</div>
+                        <h3 style="margin-bottom:8px; font-size:1.25rem;">Démonstration d'Imagin'Art Suite</h3>
+                        <p style="font-size:0.9rem; max-width:480px;">Cliquez pour lancer la vidéo de présentation (placez votre vidéo demo.mp4 dans le dossier assets/)</p>
+                    </div>
+                </div>
+
+                <div class="video-info-bar">
+                    <div class="video-tags">
+                        <span class="video-tag-item">⏱️ Gain de temps considérable</span>
+                        <span class="video-tag-item">📐 Tracés techniques 100% exacts</span>
+                        <span class="video-tag-item">🖨️ Calques prépresse normalisés</span>
+                    </div>
+                    <a href="#outils" class="btn btn-secondary btn-sm">Explorer les fonctions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION OUTILS & FONCTIONNALITÉS ═══ -->
+    <section class="section" id="outils">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Boîte à outils complète</div>
+                <h2 class="section-title">15 outils spécialisés, un seul panneau</h2>
+                <p class="section-desc">
+                    Chaque bouton ci-dessous correspond exactement à l'interface réelle de l'extension dans Illustrator.
+                </p>
+            </div>
+
+            <!-- Onglets de filtrage -->
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-filter="all">Tous les outils</button>
+                <button class="tab-btn" data-filter="mise-en-page">Mise en page &amp; Imposition</button>
+                <button class="tab-btn" data-filter="technique">Création Technique &amp; Packaging</button>
+                <button class="tab-btn" data-filter="export">Contrôle &amp; Export</button>
+            </div>
+
+            <!-- Grille des 16 cartes d'outils fidèles au plugin -->
+            <div class="tools-grid">
+                
+                <!-- 1. Grid -->
+                <div class="tool-card" data-category="mise-en-page">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon grid-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Grid</h3>
+                                <span class="plugin-btn-sub">Grid Layout</span>
+                            </div>
+                            <span class="plugin-btn-badge">Layout</span>
+                        </div>
+                        <p class="tool-desc">
+                            Générez des grilles de composition modulaires précises avec contrôle total des marges, colonnes, rangées et gouttières sur vos plans de travail.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Alignement au millimètre pour vos maquettes</span>
+                    </div>
+                </div>
+
+                <!-- 2. Bento -->
+                <div class="tool-card" data-category="mise-en-page">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon bento-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Bento</h3>
+                                <span class="plugin-btn-sub">Bento moderne grid</span>
+                            </div>
+                            <span class="plugin-btn-badge">Design</span>
+                        </div>
+                        <p class="tool-desc">
+                            Créez instantanément des mises en page modernes style Bento Grid pour vos présentations de marque, fiches produits et réseaux sociaux.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Rendu visuel équilibré et percutant en 1 clic</span>
+                    </div>
+                </div>
+
+                <!-- 3. Layout Master -->
+                <div class="tool-card" data-category="mise-en-page">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon layout-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Layout</h3>
+                                <span class="plugin-btn-sub">Montage & Redimensionnement en Série</span>
+                            </div>
+                            <span class="plugin-btn-badge">Imposition</span>
+                        </div>
+                        <p class="tool-desc">
+                            Préparez rapidement vos fichiers d'impression et de découpe : répétition automatique avec traits de coupe, montage de séries variables (badges nominatifs...) et redimensionnement par lot vertical, horizontal ou à dimensions personnalisées.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Répétition automatique avec traits de coupe</span>
+                    </div>
+                </div>
+
+                <!-- 4. Booklet -->
+                <div class="tool-card" data-category="mise-en-page">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon booklet-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Booklet</h3>
+                                <span class="plugin-btn-sub">Impose un PDF en livret (piqûre)</span>
+                            </div>
+                            <span class="plugin-btn-badge">Imposition</span>
+                        </div>
+                        <p class="tool-desc">
+                            Impose automatiquement un document ou un fichier PDF multipage en livret prêt pour piqûre à cheval avec calcul exact de l'ordre des cahiers.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Prêt pour l'impression recto-verso en cahiers</span>
+                    </div>
+                </div>
+
+                <!-- 5. Pagination -->
+                <div class="tool-card" data-category="mise-en-page">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon pagination-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Pagination</h3>
+                                <span class="plugin-btn-sub">Add page numbers to artboards</span>
+                            </div>
+                            <span class="plugin-btn-badge">Mise en page</span>
+                        </div>
+                        <p class="tool-desc">
+                            Numérotez automatiquement tous vos plans de travail avec le positionnement, les marges, le préfixe et la typographie de votre choix.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Fini de modifier 40 numéros de page manuellement</span>
+                    </div>
+                </div>
+
+                <!-- 6. MaskBoard -->
+                <div class="tool-card" data-category="mise-en-page">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon maskboard-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin'MaskBoard</h3>
+                                <span class="plugin-btn-sub">Masquer les débordements d'artboards</span>
+                            </div>
+                            <span class="plugin-btn-badge">Affichage</span>
+                        </div>
+                        <p class="tool-desc">
+                            Masquez en un clic tous les éléments vectoriels qui débordent hors du plan de travail pour une présentation client propre sans altérer vos tracés.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Aperçu net sans découpage destructif</span>
+                    </div>
+                </div>
+
+                <!-- 7. QR Code -->
+                <div class="tool-card" data-category="technique">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon qr-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin'QR</h3>
+                                <span class="plugin-btn-sub">Générer des QR Codes vectoriels</span>
+                            </div>
+                            <span class="plugin-btn-badge">Vector</span>
+                        </div>
+                        <p class="tool-desc">
+                            Générez des QR Codes 100% vectoriels, éditables et personnalisables directement dans Illustrator : liens, Wi-Fi, textes libres.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Aucun pixel, net à n'importe quelle échelle d'impression</span>
+                    </div>
+                </div>
+
+                <!-- 8. Palette -->
+                <div class="tool-card" data-category="technique">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon palette-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin'Palette</h3>
+                                <span class="plugin-btn-sub">Générateur de palettes couleur</span>
+                            </div>
+                            <span class="plugin-btn-badge">Couleur</span>
+                        </div>
+                        <p class="tool-desc">
+                            Extrayez, générez et harmonisez vos palettes de couleurs directement injectables dans le nuancier officiel de votre document.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Nuanciers professionnels en 1 clic</span>
+                    </div>
+                </div>
+
+                <!-- 9. Gradient -->
+                <div class="tool-card" data-category="technique">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon gradient-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin'Gradient</h3>
+                                <span class="plugin-btn-sub">Générateur de dégradés tendances</span>
+                            </div>
+                            <span class="plugin-btn-badge">Couleur</span>
+                        </div>
+                        <p class="tool-desc">
+                            Générateur de dégradés modernes linéaires et radiaux avec transitions chromatiques fluides et prévisualisation instantanée.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Dégradés riches sans transitions ternes</span>
+                    </div>
+                </div>
+
+                <!-- 10. AssetShelf -->
+                <div class="tool-card" data-category="technique">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon assetshelf-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin'AssetShelf</h3>
+                                <span class="plugin-btn-sub">Bibliothèque locale d'actifs</span>
+                            </div>
+                            <span class="plugin-btn-badge">Bibliothèque</span>
+                        </div>
+                        <p class="tool-desc">
+                            Stockez et insérez en un clic vos éléments récurrents : logos clients, repères d'impression, pictogrammes, tampons et mentions légales. Une vraie bibliothèque locale, toujours disponible, même hors ligne.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Vos composants favoris toujours à portée de clic</span>
+                    </div>
+                </div>
+
+                <!-- 11. Pack Library -->
+                <div class="tool-card" data-category="technique">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon packlib-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Pack</h3>
+                                <span class="plugin-btn-sub">Gabarits d'emballage et de sacs</span>
+                            </div>
+                            <span class="plugin-btn-badge">Packaging</span>
+                        </div>
+                        <p class="tool-desc">
+                            Générez instantanément des gabarits techniques de boîtes pliantes, étuis produits et sacs shopping aux dimensions exactes avec lignes de pli et de coupe.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Gabarits d'emballage paramétriques aux cotes réelles</span>
+                    </div>
+                </div>
+
+                <!-- 12. UV Spot -->
+                <div class="tool-card" data-category="technique">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon uvspot-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' UV Spot</h3>
+                                <span class="plugin-btn-sub">Vernis sélectif &amp; ton direct</span>
+                            </div>
+                            <span class="plugin-btn-badge">Prépresse</span>
+                        </div>
+                        <p class="tool-desc">
+                            Préparez vos calques techniques de vernis sélectif, dorure à chaud et tons directs avec la surimpression et les couleurs normalisées en un clic.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Vos zones de vernis sélectif générées automatiquement, sans traçage manuel</span>
+                    </div>
+                </div>
+
+                <!-- 13. Nesting -->
+                <div class="tool-card" data-category="export">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon nesting-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Nesting</h3>
+                                <span class="plugin-btn-sub">Estimation de matière automatique</span>
+                            </div>
+                            <span class="plugin-btn-badge">Matière</span>
+                        </div>
+                        <p class="tool-desc">
+                            Imagin'Nest imbrique automatiquement vos formes vectorielles pour estimer la quantité de matière nécessaire à leur réalisation. Visualisez rapidement l'espace occupé et obtenez une estimation fiable pour vos devis, sans logiciel de découpe ni montage manuel.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Estimation rapide de la matière nécessaire</span>
+                    </div>
+                </div>
+
+                <!-- 15. Typo Audit -->
+                <div class="tool-card" data-category="export">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon typoaudit-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Typo Audit</h3>
+                                <span class="plugin-btn-sub">Audit typographique du document</span>
+                            </div>
+                            <span class="plugin-btn-badge">Contrôle</span>
+                        </div>
+                        <p class="tool-desc">
+                            Audite l'ensemble de votre document pour lister les polices utilisées, détecter les textes non vectorisés et prévenir les polices manquantes à l'impression.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Vérification prévol rapide avant expédition</span>
+                    </div>
+                </div>
+
+                <!-- 16. Export -->
+                <div class="tool-card" data-category="export">
+                    <div>
+                        <div class="plugin-btn-preview">
+                            <div class="tool-icon export-icon"></div>
+                            <div class="plugin-btn-text">
+                                <h3>Imagin' Export</h3>
+                                <span class="plugin-btn-sub">Exportation multi-format automatique</span>
+                            </div>
+                            <span class="plugin-btn-badge">Export</span>
+                        </div>
+                        <p class="tool-desc">
+                            Exportez tous vos plans de travail dans les formats indispensables (PDF Haute Définition, PNG transparent, SVG, JPG, DXF) avec renommage automatique.
+                        </p>
+                    </div>
+                    <div class="tool-benefit">
+                        <span>✓ Exportez 50 fichiers en 1 seul clic</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION BÉNÉFICES CONCRETS ═══ -->
+    <section class="section" id="avantages" style="background: #0b0a08; border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Conçu par un professionnel de l'image</div>
+                <h2 class="section-title">Ce que cela change dans votre quotidien</h2>
+                <p class="section-desc">
+                    Pas de promesses théoriques : des résultats concrets visibles dès le premier jour d'utilisation.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">01</div>
+                    <h3 class="benefit-title">Fini les erreurs de prépresse</h3>
+                    <p class="benefit-desc">
+                        Calques de vernis, traits de coupe, fonds perdus et surimpressions configurés selon les standards stricts de l'imprimerie.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">02</div>
+                    <h3 class="benefit-title">Des heures de production gagnées</h3>
+                    <p class="benefit-desc">
+                        Gabarits, numérotation et imposition manuelle en quelques secondes. Ce qui prenait 45 minutes se règle en 3 clics.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">03</div>
+                    <h3 class="benefit-title">Installation simple &amp; locale</h3>
+                    <p class="benefit-desc">
+                        Un fichier .exe à lancer, une clé à entrer et c'est prêt. Fonctionne hors ligne — vos fichiers clients restent privés sur votre poste.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION INSTALLATION & COMPATIBILITÉ ═══ -->
+    <section class="section" id="installation">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Guide d'installation</div>
+                <h2 class="section-title">Prêt en 3 étapes</h2>
+                <p class="section-desc">
+                    L'installateur prend en charge tout automatiquement. Pas de configuration manuelle, pas de dossiers à déplacer.
+                </p>
+            </div>
+
+            <div class="install-box">
+                <div class="install-tabs">
+                    <button class="install-tab-btn active" data-target="tab-windows">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.902-1.799"/></svg>
+                        Installation Windows
+                    </button>
+                    <button class="install-tab-btn" data-target="tab-macos">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.87.94-2.97-.92.04-2.02.62-2.67 1.39-.58.68-1.09 1.77-.95 2.83 1.03.08 2.05-.47 2.68-1.25z"/></svg>
+                        Installation macOS
+                    </button>
+                </div>
+
+                <!-- Contenu Windows -->
+                <div class="install-content install-tab-content" id="tab-windows" style="display:block;">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-index">1</div>
+                            <div class="step-info" style="flex:1;">
+                                <h4>Lancez l'installateur</h4>
+                                <p>Double-cliquez sur le fichier <code>.exe</code> reçu. L'installateur configure automatiquement l'extension dans Adobe Illustrator.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-index">2</div>
+                            <div class="step-info" style="flex:1;">
+                                <h4>Ouvrez Adobe Illustrator</h4>
+                                <p>Redémarrez Illustrator si nécessaire, puis ouvrez le panneau via : <strong>Fenêtre &gt; Extensions &gt; Imagin'Art Suite</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-index">3</div>
+                            <div class="step-info" style="flex:1;">
+                                <h4>Entrez votre clé de licence</h4>
+                                <p>Saisissez la clé reçue par email pour activer immédiatement l'ensemble des outils. Une connexion Internet est nécessaire pour cette étape d'activation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenu macOS -->
+                <div class="install-content install-tab-content" id="tab-macos" style="display:none;">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-index">1</div>
+                            <div class="step-info" style="flex:1;">
+                                <h4>Lancez l'installateur macOS</h4>
+                                <p>Ouvrez le fichier <code>.pkg</code> ou l'application d'installation fournie. Elle configure automatiquement l'extension dans Adobe Illustrator.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-index">2</div>
+                            <div class="step-info" style="flex:1;">
+                                <h4>Ouvrez Adobe Illustrator</h4>
+                                <p>Lancez ou redémarrez Illustrator, puis accédez à : <strong>Fenêtre &gt; Extensions &gt; Imagin'Art Suite</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-index">3</div>
+                            <div class="step-info" style="flex:1;">
+                                <h4>Entrez votre clé de licence</h4>
+                                <p>Saisissez la clé reçue par email pour activer l'ensemble des outils. Une connexion Internet est requise pour l'activation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION FAQ ═══ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Questions Fréquentes</div>
+                <h2 class="section-title">Tout ce que vous devez savoir</h2>
+                <p class="section-desc">Des réponses claires et transparentes à vos questions courantes.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <div class="faq-question">
+                        <span>Quelles sont les versions d'Adobe Illustrator compatibles ?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        L'extension est compatible avec <strong>Adobe Illustrator 2021, 2022, 2023, 2024, 2025 et 2026</strong>, sous <strong>Windows 10/11</strong> et <strong>macOS — aussi bien sur Mac Intel que sur Mac M1, M2, M3 et M4 (Apple Silicon)</strong>.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Le plugin nécessite-t-il une connexion Internet ?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Une connexion est requise uniquement lors de l'activation initiale. Une fois la clé validée, les 15 outils fonctionnent entièrement en local et hors-ligne.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Les fichiers et gabarits générés sont-ils modifiables ?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Oui. Tout ce que la suite génère — grilles, gabarits de boîtes, QR codes, livrets imposés, calques de vernis — est composé de tracés vectoriels natifs Illustrator, avec des calques nommés et organisés. Vous gardez le contrôle total.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment obtenir une licence ?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Contactez directement le concepteur par email : <a href="mailto:laabidi.cloud@gmail.com" style="color:var(--gold-light); text-decoration:underline;">laabidi.cloud@gmail.com</a>. Vous recevrez votre clé et les instructions d'installation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <img src="img/logo_icon.svg" alt="Logo" class="logo-icon" style="height:32px;">
+                        <img src="img/logo_text.svg" alt="Imagin'Art" class="logo-text" style="height:18px;">
+                    </div>
+                    <p>
+                        Solution logicielle d'automatisation et de production prépresse conçue pour les professionnels du graphisme et de l'imprimerie.
+                    </p>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#demo">Démo Vidéo</a></li>
+                        <li><a href="#outils">Liste des Outils</a></li>
+                        <li><a href="#avantages">Bénéfices Ateliers</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#faq">Questions Fréquentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Contact &amp; Développeur</h4>
+                    <ul>
+                        <li><strong>Laabidi Abdelghani</strong> (Imagin'Art)</li>
+                        <li><a href="mailto:laabidi.cloud@gmail.com">laabidi.cloud@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Imagin'Art — Tous droits réservés. Développé par Laabidi Abdelghani.</div>
+                <div>Adobe® et Illustrator® sont des marques déposées d'Adobe Inc.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast-notification" class="toast-msg"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
