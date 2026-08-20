@@ -266,7 +266,7 @@ p {
 
 /* ═══ HERO SECTION ═══ */
 .hero-section {
-    padding-top: 150px;
+    padding-top: 160px;
     padding-bottom: 80px;
     text-align: center;
     position: relative;
@@ -621,7 +621,7 @@ p {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
     gap: 24px;
 }
 
@@ -1173,101 +1173,130 @@ p {
         overflow-x: hidden;
         width: 100%;
     }
-    
+
     .container {
-        padding: 0 16px;
+        padding: 0 14px;
     }
 
-    .navbar { 
-        height: 60px; 
-    }
-    
-    .nav-links { 
-        display: none; 
+    /* ─── Navbar ─── */
+    .navbar {
+        height: 60px;
     }
 
+    .nav-links {
+        display: none;
+    }
+
+    /* ─── Hero : dégagement correct au-dessus de la barre fixe ─── */
     .hero-section {
-        padding-top: 120px !important;
+        padding-top: 90px !important;
         padding-bottom: 40px;
     }
 
-    .hero-title { 
-        font-size: 1.65rem;
-        line-height: 1.25;
-        margin-top: 10px;
+    .hero-title {
+        font-size: 1.6rem;
+        line-height: 1.28;
     }
 
-    .hero-subtitle { 
+    .hero-subtitle {
         font-size: 0.9rem;
         margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 12px 18px;
     }
 
     .hero-specs {
         flex-wrap: wrap;
         gap: 8px 10px;
         justify-content: center;
-        font-size: 0.76rem;
+        font-size: 0.74rem;
+        margin-top: 18px;
     }
 
     .hero-preview {
         margin-top: 24px;
-        border-radius: 10px;
         width: 100%;
         overflow: hidden;
+        border-radius: 10px;
     }
 
     .preview-bar {
-        padding: 8px 12px;
+        padding: 7px 10px;
     }
 
     .preview-title {
-        font-size: 0.68rem;
+        font-size: 0.65rem;
+    }
+
+    /* ─── Image hero (screenshot de la Suite) ─── */
+    .preview-body-image {
+        overflow: hidden;
     }
 
     .preview-body-image img {
         width: 100%;
         height: auto;
+        display: block;
         object-fit: contain !important;
     }
 
-    .section { 
-        padding: 45px 0; 
+    /* ─── Sections générales ─── */
+    .section {
+        padding: 44px 0;
     }
 
     .section-title {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .section-desc {
-        font-size: 0.88rem;
+        font-size: 0.87rem;
     }
 
+    /* ─── Onglets des catégories d'outils : scroll horizontal tactile ─── */
     .tabs-nav {
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 8px;
         justify-content: flex-start;
-        margin-bottom: 20px;
+        padding-bottom: 6px;
+        margin-bottom: 18px;
+        scrollbar-width: none;
+    }
+
+    .tabs-nav::-webkit-scrollbar {
+        display: none;
     }
 
     .tab-btn {
         flex-shrink: 0;
         white-space: nowrap;
         font-size: 0.78rem;
-        padding: 7px 14px;
+        padding: 7px 13px;
     }
 
-    .tools-grid { 
+    /* ─── Grille des 15 outils ─── */
+    .tools-grid {
         grid-template-columns: 1fr !important;
-        gap: 14px;
+        gap: 12px;
         width: 100%;
     }
 
     .tool-card {
         padding: 16px;
-        box-sizing: border-box;
         width: 100%;
+        box-sizing: border-box;
         overflow: hidden;
     }
 
@@ -1280,31 +1309,33 @@ p {
     }
 
     .plugin-btn-text h3 {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
     }
 
     .plugin-btn-sub {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
     }
 
     .plugin-btn-badge {
-        font-size: 0.65rem;
+        font-size: 0.62rem;
         padding: 2px 6px;
         position: static;
         margin-left: auto;
     }
 
+    /* ─── Bénéfices ─── */
     .benefits-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
     }
 
     .benefit-card {
         padding: 18px;
     }
 
+    /* ─── Installation ─── */
     .install-box {
-        padding: 16px;
+        padding: 14px;
     }
 
     .install-tabs {
@@ -1318,44 +1349,56 @@ p {
         padding: 10px;
     }
 
+    /* ─── Vidéo : ratio correct, pas d'étirement ─── */
+    .video-card {
+        width: 100%;
+        overflow: hidden;
+    }
+
     .video-player-wrapper {
+        width: 100%;
         aspect-ratio: 16 / 9;
+        overflow: hidden;
     }
 
     .video-player-wrapper video {
+        width: 100%;
+        height: 100%;
         object-fit: contain !important;
     }
 
     .video-placeholder {
-        padding: 16px;
+        padding: 20px 14px;
     }
 
     .video-info-bar {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 14px;
-        padding: 16px;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
     }
 
     .video-tags {
-        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .video-tag-item {
-        font-size: 0.74rem;
+        font-size: 0.73rem;
     }
 
+    /* ─── FAQ ─── */
     .faq-question {
-        font-size: 0.92rem;
+        font-size: 0.9rem;
         padding: 14px;
     }
 
     .faq-answer {
-        font-size: 0.86rem;
+        font-size: 0.85rem;
         padding: 0 14px 14px;
     }
 
+    /* ─── Footer ─── */
     .footer-content {
         flex-direction: column;
         gap: 24px;
@@ -1367,3 +1410,5 @@ p {
         gap: 10px;
     }
 }
+
+
