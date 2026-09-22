@@ -20,20 +20,32 @@
                     <span class="suite-tag">Suite V4.0</span>
                 </a>
 
-                <ul class="nav-links">
+                <ul class="nav-links" id="mobile-nav-menu">
                     <li><a href="#demo" class="nav-link">Démo</a></li>
                     <li><a href="#outils" class="nav-link">Outils</a></li>
                     <li><a href="#avantages" class="nav-link">Bénéfices</a></li>
                     <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
                     <li><a href="#installation" class="nav-link">Installation</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <!-- CTA visible uniquement sur mobile dans le menu -->
+                    <li class="nav-mobile-cta">
+                        <a href="#tarifs" class="btn btn-primary">Acheter la Suite</a>
+                    </li>
                 </ul>
 
                 <div class="nav-actions">
                     <a href="#tarifs" class="btn btn-primary btn-sm">Acheter la Suite</a>
                 </div>
 
+                <!-- Bouton Hamburger (visible uniquement sur mobile via CSS) -->
+                <button class="nav-hamburger" id="nav-hamburger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
             </nav>
+
         </div>
     </header>
 

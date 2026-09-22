@@ -161,7 +161,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // 6. Navigation fluide
+    // ─── MENU HAMBURGER MOBILE ───
+    const hamburgerBtn = document.getElementById('nav-hamburger-btn');
+    const mobileMenu   = document.getElementById('mobile-nav-menu');
+
+    function closeMobileMenu() {
+        if (hamburgerBtn && mobileMenu) {
+            hamburgerBtn.classList.remove('open');
+            mobileMenu.classList.remove('mobile-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = mobileMenu.classList.contains('mobile-open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                hamburgerBtn.classList.add('open');
+                mobileMenu.classList.add('mobile-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        // Fermer sur clic en dehors
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // 6. Navigation fluide — ferme aussi le menu mobile sur mobile
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -169,10 +202,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                closeMobileMenu();
+                // Petit délai pour laisser le menu se fermer avant le scroll
+                setTimeout(() => {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 50);
             }
         });
     });
