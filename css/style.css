@@ -74,6 +74,7 @@ html {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-body);
+    overflow-x: hidden; /* Bloquer scroll horizontal partout */
 }
 
 body {
@@ -84,7 +85,8 @@ body {
         radial-gradient(circle at 0% 80%, rgba(167, 136, 99, 0.04) 0%, transparent 40%);
     background-attachment: fixed;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Bloquer scroll horizontal */
+    max-width: 100vw;   /* Ne jamais dépasser la largeur de l'écran */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -115,6 +117,7 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    box-sizing: border-box; /* S'assure que padding ne crée pas de débordement */
 }
 
 .section {
@@ -1215,11 +1218,12 @@ p {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   RESPONSIVE — TABLETTE (≤ 1024px)
+   RESPONSIVE — TABLETTE UNIQUEMENT (769px → 1024px)
+   Utilisation de min-width pour ne pas affecter le mobile
    ═══════════════════════════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
 
-    /* ─── Pricing : 3 col → 2 col ─── */
+    /* ─── Pricing : 3 col → 2 col (tablette seulement) ─── */
     .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -1596,7 +1600,7 @@ p {
 
     /* ─── Tarifs Responsive (mobile ≤ 768px) ─── */
     .pricing-roi-banner {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 12px;
         padding: 16px;
     }
@@ -1616,30 +1620,38 @@ p {
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: 1fr !important;
+        gap: 16px;
     }
 
     .pricing-card {
         padding: 22px 18px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
-    /* Annuler le span:2 du tablette */
+    /* Annuler le span:2 et scale du tablette */
     .pricing-card.featured {
-        transform: none;
-        grid-column: span 1;
+        transform: none !important;
+        grid-column: span 1 !important;
         border-width: 2px;
     }
 
     .pricing-card.featured:hover {
-        transform: translateY(-4px);
+        transform: translateY(-4px) !important;
     }
 
-    /* Ribbon centré bien visible */
+    /* Ribbon : permettre le retour à la ligne sur mobile */
     .featured-ribbon {
-        font-size: 0.68rem;
-        padding: 4px 12px;
+        font-size: 0.66rem;
+        padding: 4px 10px;
         top: -12px;
+        white-space: normal;
+        text-align: center;
+        max-width: 90%;
+        line-height: 1.3;
     }
 
     /* Prix : réduire l'amount pour éviter le débordement */
@@ -1757,6 +1769,7 @@ p {
    ═══════════════════════════════════════════════════════════════════════════ */
 .pricing-section {
     position: relative;
+    overflow: hidden; /* Empêche tout débordement horizontal */
 }
 
 /* Bandeau ROI */
@@ -1811,7 +1824,10 @@ p {
     gap: 24px;
     align-items: stretch;
     margin-bottom: 40px;
+    width: 100%; /* Sécurité anti-débordement */
+    box-sizing: border-box;
 }
+
 
 .pricing-card {
     background: var(--bg-card);
