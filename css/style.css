@@ -42,6 +42,7 @@
     --glow-nesting:     linear-gradient(135deg, #80cbc4 0%, #00796b 100%);
     --glow-gradient:    linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
     --glow-assetshelf:  linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+    --glow-upscayl:     linear-gradient(135deg, #d8b4fe 0%, #8b5cf6 50%, #4f46e5 100%);
     
     /* Bordures & Ombres */
     --border-subtle: rgba(167, 136, 99, 0.18);
@@ -179,14 +180,38 @@ p {
 }
 
 .nav-link {
+    position: relative;
     font-size: 0.92rem;
     font-weight: 500;
     color: var(--text-muted);
-    transition: color 0.2s ease;
+    padding: 6px 0;
+    transition: color 0.25s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f3dcaf, #a78863);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-link:hover {
     color: var(--gold-light);
+}
+
+.nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
 }
 
 .nav-actions {
@@ -215,6 +240,7 @@ p {
     background: linear-gradient(135deg, #f3dcaf 0%, #a78863 60%, #7a5e3f 100%);
     color: #080706;
     box-shadow: 0 4px 15px rgba(167, 136, 99, 0.3);
+    border-right: none;
 }
 
 .btn-primary:hover {
@@ -314,13 +340,15 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    font-size: 0.88rem;
+    flex-wrap: nowrap;
+    gap: 20px;
+    font-size: 0.85rem;
     color: var(--text-dim);
     border-top: 1px solid var(--border-subtle);
     padding-top: 24px;
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto 50px auto;
+    white-space: nowrap;
 }
 
 .hero-specs span {
@@ -843,6 +871,14 @@ p {
 .uvspot-icon::after {
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z'/%3E%3C/svg%3E");
+}
+
+/* Upscayl — Violet IA & Résolution */
+.upscayl-icon { background: var(--glow-upscayl); }
+.upscayl-icon::before { background: var(--glow-upscayl); }
+.upscayl-icon::after {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z'/%3E%3Cpath d='M19 3v4M17 5h4' stroke-width='1.5'/%3E%3Cpath d='M5 19v2M4 20h2' stroke-width='1.5'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z'/%3E%3Cpath d='M19 3v4M17 5h4' stroke-width='1.5'/%3E%3Cpath d='M5 19v2M4 20h2' stroke-width='1.5'/%3E%3C/svg%3E");
 }
 
 /* 13. Nesting */
@@ -1409,6 +1445,509 @@ p {
         text-align: center;
         gap: 10px;
     }
+
+    /* ─── Tarifs Responsive ─── */
+    .pricing-roi-banner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-4px);
+    }
+
+    .trust-methods-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .whatsapp-float-tooltip {
+        display: none;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO REASSURANCE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.hero-reassurance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.hero-reassurance span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(167, 136, 99, 0.08);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION TARIFS MAROC (PRICING)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.pricing-section {
+    position: relative;
+}
+
+/* Bandeau ROI */
+.pricing-roi-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.roi-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.roi-icon {
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(167, 136, 99, 0.12);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.roi-text strong {
+    display: block;
+    color: var(--gold-light);
+    font-size: 1rem;
+    font-family: var(--font-heading);
+}
+
+.roi-text p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Grille des Cartes */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 40px;
+}
+
+.pricing-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-bright);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Carte Star / Featured */
+.pricing-card.featured {
+    background: linear-gradient(180deg, #1f1a14 0%, #161310 100%);
+    border: 2px solid var(--gold-primary);
+    box-shadow: 0 10px 40px rgba(167, 136, 99, 0.25);
+    transform: scale(1.03);
+    z-index: 2;
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 14px 48px rgba(167, 136, 99, 0.35);
+}
+
+.featured-ribbon {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #f3dcaf 0%, #a78863 100%);
+    color: #080706;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 5px 16px;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+}
+
+.pricing-card-header {
+    text-align: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 24px;
+}
+
+.plan-badge {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background: rgba(167, 136, 99, 0.12);
+    color: var(--gold-light);
+    margin-bottom: 12px;
+}
+
+.featured-badge {
+    background: rgba(243, 220, 175, 0.2);
+    color: var(--gold-light);
+    border: 1px solid rgba(243, 220, 175, 0.3);
+}
+
+.plan-name {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.plan-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.plan-price .currency {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold-light);
+}
+
+.plan-price .amount {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.plan-price .period {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.plan-cost-per-pc {
+    display: inline-block;
+    font-size: 0.82rem;
+    color: var(--gold-light);
+    background: rgba(167, 136, 99, 0.15);
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+}
+
+.plan-renewal {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.plan-renewal strong {
+    color: var(--text-main);
+}
+
+.discount-pill {
+    display: inline-block;
+    background: #1e7e34;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.72rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+}
+
+/* Caractéristiques du plan */
+.plan-features {
+    list-style: none;
+    margin-bottom: 28px;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+.plan-features li strong {
+    color: var(--text-main);
+}
+
+.f-check {
+    color: #25D366;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.plan-note {
+    font-size: 0.8rem;
+    background: rgba(167, 136, 99, 0.08);
+    border: 1px dashed var(--border-subtle);
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    margin-top: 14px;
+    color: var(--gold-light) !important;
+}
+
+/* Boutons de commande WhatsApp */
+.pricing-card-action {
+    margin-top: auto;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    color: #4ade80;
+    font-size: 0.92rem;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    transition: all 0.25s ease;
+}
+
+.btn-whatsapp:hover {
+    background: #25D366;
+    color: #080706;
+    border-color: #25D366;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp-featured {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    border: 1px solid #25D366;
+    color: #080706;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-whatsapp-featured:hover {
+    background: #20ba59;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* Bloc Confiance / Moyens de paiement Maroc */
+.pricing-trust-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    text-align: center;
+}
+
+.trust-badge-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    background: rgba(167, 136, 99, 0.1);
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+}
+
+.trust-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.trust-method-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(167, 136, 99, 0.1);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+}
+
+.method-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.method-details h4 {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.method-details p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Footer WhatsApp Link */
+.footer-wa-link {
+    color: #4ade80 !important;
+    font-weight: 600;
+}
+
+.footer-wa-link:hover {
+    text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BOUTON FLOTTANT WHATSAPP
+   ═══════════════════════════════════════════════════════════════════════════ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 62px;
+    height: 62px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+    z-index: 9999;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.6;
+    animation: wa-pulse 2s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes wa-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+.whatsapp-float-tooltip {
+    position: absolute;
+    right: 74px;
+    background: #181512;
+    color: #ffffff;
+    border: 1px solid var(--border-bright);
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.25s ease;
+}
+
+.whatsapp-float:hover .whatsapp-float-tooltip {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 

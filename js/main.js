@@ -3,7 +3,68 @@
  * Smooth UX, Interactive Tabs, Video Handling, FAQ Accordion & Clipboard helpers
  */
 
+// ═══ CONFIGURATION WHATSAPP ═══
+// 💡 Numéro officiel Imagin'Art Suite
+const WHATSAPP_CONFIG = {
+    number: "212663280311", // Format international sans '+'
+    displayNumber: "+212 6 63 28 03 11"
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Mise à jour de sécurité des liens WhatsApp
+    if (WHATSAPP_CONFIG.number !== "212663280311") {
+        document.querySelectorAll('a[href*="212663280311"]').forEach(a => {
+            a.href = a.href.replace(/212663280311/g, WHATSAPP_CONFIG.number);
+        });
+        document.querySelectorAll('.footer-wa-link').forEach(el => {
+            el.textContent = `💬 WhatsApp : ${WHATSAPP_CONFIG.displayNumber}`;
+        });
+    }
+
+    // 0. ScrollSpy dynamique — Détection de la section visible
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(navLinks)
+        .map(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                return document.querySelector(href);
+            }
+            return null;
+        })
+        .filter(Boolean);
+
+    function updateScrollSpy() {
+        const scrollPosition = window.scrollY + 200; // Marge confortable sous la barre fixe
+        let activeId = '';
+
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            if (scrollPosition >= top && scrollPosition < top + height) {
+                activeId = '#' + section.id;
+            }
+        });
+
+        // Détection spéciale en fin de page (pour activer la FAQ même si la section est courte)
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50)) {
+            const lastSection = sections[sections.length - 1];
+            if (lastSection) {
+                activeId = '#' + lastSection.id;
+            }
+        }
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === activeId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateScrollSpy, { passive: true });
+    updateScrollSpy();
+
     // 1. Outils & Fonctionnalités — Filtres d'onglets
     const tabButtons = document.querySelectorAll('.tab-btn');
     const toolCards = document.querySelectorAll('.tool-card');
