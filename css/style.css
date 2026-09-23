@@ -99,13 +99,22 @@ body {
     height: 100%;
     background-image: url('../img/pattern.svg');
     background-repeat: repeat;
-    background-size: 380px;
-    opacity: 0.035; /* Léger pour ne pas surcharger le thème sombre */
-    z-index: -1;
+    background-size: 340px;
+    opacity: 0.06;
+    z-index: 0;
     pointer-events: none;
-    transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0);
     -webkit-transform: translateZ(0);
     will-change: transform;
+}
+
+/* Tout le contenu doit passer AU-DESSUS du pattern */
+.site-header,
+.hero-section,
+section,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 ::selection {
