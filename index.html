@@ -124,17 +124,22 @@
 
             <div class="video-card">
                 <div class="video-player-wrapper">
-                    <!-- Lecteur vidéo HTML5 si demo.mp4 est placé dans assets/ -->
+                    <!-- Lecteur vidéo HTML5 (actif quand demo.mp4 sera disponible) -->
                     <video id="demo-video-player" controls style="display:none;">
                         <source src="assets/demo.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos HTML5.
                     </video>
 
-                    <!-- Zone d'aperçu / Bouton de lecture -->
-                    <div class="video-placeholder" id="video-placeholder-box">
-                        <div class="play-button-big" id="play-demo-btn">▶</div>
-                        <h3 style="margin-bottom:8px; font-size:1.25rem;">Démonstration d'Imagin'Art Suite</h3>
-                        <p style="font-size:0.9rem; max-width:480px;">Cliquez pour lancer la vidéo de présentation (placez votre vidéo demo.mp4 dans le dossier assets/)</p>
+                    <!-- Zone Coming Soon -->
+                    <div class="video-placeholder video-coming-soon" id="video-placeholder-box">
+                        <div class="coming-soon-inner">
+                            <div class="coming-soon-icon">🎬</div>
+                            <h3 class="coming-soon-title">Tutoriel vidéo en préparation</h3>
+                            <p class="coming-soon-sub">Découvrez bientôt la suite en action — de la mise en page à l'export prépresse, étape par étape.</p>
+                            <div class="coming-soon-badge">
+                                <span class="pulse-dot"></span>
+                                Disponible très prochainement
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -146,6 +151,7 @@
                     </div>
                     <a href="#outils" class="btn btn-secondary btn-sm">Explorer les fonctions</a>
                 </div>
+
             </div>
         </div>
     </section>
