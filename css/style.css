@@ -376,70 +376,112 @@ p {
     margin-bottom: 48px;
 }
 
-.hero-specs {
+/* ─── BANDEAU DE RÉASSURANCE UNIQUE HERO (Style Studio Pro) ─── */
+.hero-trust-bar {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    border-top: 1px solid var(--border-subtle);
-    padding-top: 24px;
-    max-width: 900px;
-    margin: 0 auto 50px auto;
-    white-space: nowrap;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0 auto 52px auto;
+    max-width: 980px;
 }
 
-.hero-specs span {
-    display: flex;
+.trust-pill {
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    background: rgba(24, 21, 18, 0.65);
+    border: 1px solid var(--border-subtle);
+    padding: 7px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
 }
 
-/* ═══ MOCKUP INTERACTIF DU PLUGIN ═══ */
+.trust-pill:hover {
+    border-color: var(--border-bright);
+    background: rgba(34, 30, 25, 0.85);
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+.trust-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--gold-primary);
+    flex-shrink: 0;
+}
+
+.trust-pill strong {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+/* ═══ MOCKUP STUDIO DE L'EXTENSION DANS ILLUSTRATOR ═══ */
 .hero-preview {
     max-width: 1040px;
     margin: 0 auto;
     border-radius: var(--radius-lg);
     background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-soft), var(--shadow-glow);
+    border: 1px solid rgba(215, 201, 174, 0.22);
+    box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.85), 0 0 50px rgba(167, 136, 99, 0.12);
     overflow: hidden;
     position: relative;
 }
 
 .preview-bar {
-    height: 40px;
-    background: #0f0d0c;
-    border-bottom: 1px solid var(--border-subtle);
+    height: 44px;
+    background: #0d0c0a;
+    border-bottom: 1px solid rgba(167, 136, 99, 0.16);
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 0 18px;
     justify-content: space-between;
 }
 
-.preview-dots {
+.preview-brand-tag {
     display: flex;
-    gap: 6px;
+    align-items: center;
+    gap: 10px;
 }
 
-.preview-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #2a2520;
+.preview-ai-badge {
+    background: #ff7c00;
+    color: #261300;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 0.72rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 10px rgba(255, 124, 0, 0.3);
 }
 
-.preview-dot.red { background: #ff5f56; }
-.preview-dot.yellow { background: #ffbd2e; }
-.preview-dot.green { background: #27c93f; }
-
-.preview-title {
-    font-size: 0.78rem;
+.preview-app-title {
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-muted);
+    letter-spacing: 0.3px;
+}
+
+.preview-status-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    color: var(--text-dim);
     font-family: monospace;
+}
+
+.status-indicator-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #26a69a;
+    box-shadow: 0 0 8px #26a69a;
 }
 
 .preview-body {
@@ -546,37 +588,23 @@ p {
     border: 1px solid rgba(171, 71, 188, 0.4);
 }
 
-/* ═══ SECTION DÉMO VIDÉO ═══ */
-.video-section {
+/* ═══ SECTION DÉMONSTRATION EN CONDITIONS RÉELLES (Vidéo + Showcase Interactif) ═══ */
+.showcase-section {
     background: linear-gradient(180deg, var(--bg-dark) 0%, #0d0c0a 50%, var(--bg-dark) 100%);
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
+    position: relative;
 }
 
-.section-header {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 50px auto;
-}
-
-.section-title {
-    font-size: 2.2rem;
-    margin-bottom: 14px;
-}
-
-.section-desc {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-}
-
+/* ─── LECTEUR VIDÉO PRINCIPAL DÉMO ─── */
 .video-card {
-    max-width: 960px;
-    margin: 0 auto;
+    max-width: 1060px;
+    margin: 0 auto 40px auto;
     border-radius: var(--radius-lg);
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     overflow: hidden;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--shadow-soft), var(--shadow-glow);
 }
 
 .video-player-wrapper {
@@ -587,6 +615,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .video-player-wrapper video {
@@ -596,111 +625,68 @@ p {
 }
 
 .video-placeholder {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, #201c18 0%, #090807 100%);
+    background: radial-gradient(circle at center, #1c1814 0%, #0d0c0a 100%);
     text-align: center;
     padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* ─── Coming Soon Overlay ─── */
-.video-coming-soon {
-    background:
-        radial-gradient(ellipse at center, #1a1510 0%, #080706 70%);
-    cursor: default;
+.video-placeholder:hover {
+    background: radial-gradient(circle at center, #231e19 0%, #0e0d0b 100%);
 }
 
-.coming-soon-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    max-width: 480px;
-}
-
-.coming-soon-icon {
-    font-size: 3rem;
-    margin-bottom: 4px;
-    filter: drop-shadow(0 0 16px rgba(167, 136, 99, 0.4));
-    animation: icon-float 3s ease-in-out infinite;
-}
-
-@keyframes icon-float {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-6px); }
-}
-
-.coming-soon-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin: 0;
-}
-
-.coming-soon-sub {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    max-width: 420px;
-    margin: 0;
-}
-
-.coming-soon-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(167, 136, 99, 0.12);
-    border: 1px solid var(--border-subtle);
-    padding: 6px 16px;
-    border-radius: var(--radius-full);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--gold-light);
-    margin-top: 4px;
-}
-
-.coming-soon-badge .pulse-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--gold-primary);
-    animation: pulse-glow 2s ease-in-out infinite;
-    flex-shrink: 0;
-}
-
-@keyframes pulse-glow {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(167, 136, 99, 0.4); }
-    50%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(167, 136, 99, 0); }
-}
-
-/* Garder les anciens styles au cas où play button réactivé */
 .play-button-big {
-    width: 72px;
-    height: 72px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
     background: linear-gradient(135deg, #f3dcaf 0%, #a78863 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #080706;
-    font-size: 1.8rem;
     cursor: pointer;
-    box-shadow: 0 0 30px rgba(167, 136, 99, 0.4);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0 35px rgba(167, 136, 99, 0.5);
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
     margin-bottom: 18px;
+    padding-left: 4px; /* Centrage optique du triangle play */
 }
 
 .play-button-big:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 45px rgba(167, 136, 99, 0.6);
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(167, 136, 99, 0.7);
+}
+
+.video-placeholder-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.video-placeholder-sub {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.video-badges-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .video-info-bar {
-    padding: 20px 28px;
+    padding: 16px 24px;
     background: var(--bg-card);
     display: flex;
     justify-content: space-between;
@@ -718,10 +704,594 @@ p {
 
 .video-tag-item {
     font-size: 0.78rem;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.video-tag-item svg {
+    color: var(--gold-primary);
+    flex-shrink: 0;
+}
+
+/* ─── SÉPARATEUR ÉLÉGANT VERS LE SIMULATEUR 4 OUTILS ─── */
+.sub-showcase-divider {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 1060px;
+    margin: 40px auto 26px auto;
+}
+
+.sub-showcase-divider .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-subtle) 50%, transparent 100%);
+}
+
+.sub-showcase-divider .divider-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--gold-light);
+    background: rgba(167, 136, 99, 0.12);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.sub-showcase-intro {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.sub-showcase-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.sub-showcase-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.demo-showcase-container {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+/* Barre des 4 onglets de scénarios d'atelier */
+.demo-tabs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.demo-tab-btn {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: left;
+    color: var(--text-muted);
+}
+
+.demo-tab-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(167, 136, 99, 0.35);
+    color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+.demo-tab-btn.active {
+    background: #1c1814;
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 20px rgba(167, 136, 99, 0.2);
+    color: var(--text-main);
+}
+
+.demo-tab-svg {
+    width: 24px;
+    height: 24px;
+    color: var(--gold-primary);
+    flex-shrink: 0;
+}
+
+.demo-tab-btn.active .demo-tab-svg {
+    color: var(--gold-light);
+}
+
+.demo-tab-text strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 3px;
+}
+
+.demo-tab-text small {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--text-dim);
+}
+
+.demo-tab-btn.active .demo-tab-text small {
+    color: var(--gold-primary);
+}
+
+/* Carte d'affichage principale */
+.demo-display-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft), var(--shadow-glow);
+    overflow: hidden;
+}
+
+.scenario-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .demo-tabs-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .scenario-panel {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 540px) {
+    .demo-tabs-bar {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contenu textuel du scénario */
+.scenario-gain-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(167, 136, 99, 0.12);
+    border: 1px solid var(--border-subtle);
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+}
+
+.scenario-headline {
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    color: var(--text-main);
+}
+
+.scenario-description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.scenario-checklist {
+    list-style: none;
+    margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.scenario-checklist li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.scenario-checklist .check-icon {
+    color: #26a69a;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.scenario-checklist strong {
+    color: var(--text-main);
+}
+
+.scenario-footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.scenario-badge-ref {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.04);
     padding: 4px 10px;
     border-radius: var(--radius-sm);
+}
+
+/* ─── SCHÉMAS TECHNIQUES ÉLÉGANTS D'ATELIER ─── */
+.scenario-visual {
+    background: #090807;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 290px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 1. Schéma Imposition Livret */
+.imposition-schematic {
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    padding: 18px;
+}
+
+.schematic-board {
+    background: #141210;
+    border: 1px dashed rgba(167, 136, 99, 0.35);
+    border-radius: 6px;
+    display: flex;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.schematic-page-block {
+    flex: 1;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #1a1714;
+}
+
+.schematic-page-block.left {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.page-tag-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    background: rgba(167, 136, 99, 0.15);
+    padding: 3px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+.schematic-text-preview {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    margin-top: 6px;
+}
+
+.schematic-text-preview.short {
+    width: 60%;
+}
+
+.schematic-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: var(--gold-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fold-indicator {
+    position: absolute;
+    background: #090807;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    font-size: 0.55rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+.schematic-cut-marks .cut-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--gold-primary);
+    border-style: solid;
+    pointer-events: none;
+}
+
+.cut-corner.tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
+.cut-corner.tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
+.cut-corner.bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
+.cut-corner.br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+
+/* 2. Schéma Vernis Sélectif */
+.uvspot-schematic {
+    width: 100%;
+    max-width: 360px;
+}
+
+.uvspot-card-demo {
+    background: #151311;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    height: 190px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.demo-card-brand {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #4a423a;
+}
+
+.uvspot-overlay-mask {
+    position: absolute;
+    inset: 24px;
+    border: 2px solid #ab47bc;
+    background: rgba(171, 71, 188, 0.18);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 0 25px rgba(171, 71, 188, 0.35);
+}
+
+.spot-glow-badge {
+    background: #ab47bc;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.spot-overprint-badge {
+    font-size: 0.62rem;
+    color: #f3e5f5;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+/* 3. Schéma Layout (Montage en Série & Traits de coupe) */
+.layout-schematic {
+    width: 100%;
+    max-width: 360px;
+}
+
+.layout-sheet-visual {
+    background: #12100e;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    height: 195px;
+    position: relative;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.layout-pose-item {
+    background: #191613;
+    border: 1px solid rgba(167, 136, 99, 0.35);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    position: relative;
+}
+
+.layout-pose-inner {
+    width: 80%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
+.layout-pose-badge {
+    font-size: 0.58rem;
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+.layout-cut-mark {
+    position: absolute;
+    background: var(--gold-primary);
+    pointer-events: none;
+}
+.layout-cut-mark.h-top { top: 6px; left: 14px; right: 14px; height: 1px; opacity: 0.45; }
+.layout-cut-mark.h-bot { bottom: 6px; left: 14px; right: 14px; height: 1px; opacity: 0.45; }
+.layout-cut-mark.v-left { left: 8px; top: 10px; bottom: 10px; width: 1px; opacity: 0.45; }
+.layout-cut-mark.v-right { right: 8px; top: 10px; bottom: 10px; width: 1px; opacity: 0.45; }
+
+.layout-tag-pill {
+    position: absolute;
+    bottom: -10px;
+    right: 14px;
+    background: #1c1813;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* 4. Schéma AssetShelf (Bibliothèque Locale) */
+.asset-schematic {
+    width: 100%;
+    max-width: 360px;
+}
+
+.asset-shelf-board {
+    background: #12100e;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    height: 195px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.asset-shelf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+.asset-shelf-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+}
+
+.asset-grid-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.asset-chip {
+    background: #191613;
+    border: 1px solid rgba(167, 136, 99, 0.25);
+    border-radius: 6px;
+    padding: 7px 4px;
+    text-align: center;
+    font-size: 0.62rem;
     color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.asset-chip.active-drag {
+    border-color: var(--gold-primary);
+    background: rgba(167, 136, 99, 0.15);
+    color: var(--gold-light);
+    box-shadow: 0 0 12px rgba(167, 136, 99, 0.25);
+}
+
+.asset-chip-svg {
+    width: 16px;
+    height: 16px;
+    color: var(--gold-primary);
+}
+
+.asset-drop-canvas {
+    flex: 1;
+    background: #090807;
+    border: 1px dashed rgba(167, 136, 99, 0.35);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-dim);
+    font-size: 0.7rem;
+}
+
+.asset-drop-canvas strong {
+    color: var(--gold-light);
+}
+
+/* Bandeau d'assurance technique bas de showcase */
+.demo-assurance-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px 24px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 768px) {
+    .demo-assurance-bar {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+.assurance-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.assurance-svg {
+    width: 16px;
+    height: 16px;
+    color: var(--gold-primary);
+    flex-shrink: 0;
 }
 
 /* ═══ SECTION OUTILS & FONCTIONNALITÉS ═══ */
@@ -774,6 +1344,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .tool-card:hover {
@@ -781,6 +1352,50 @@ p {
     border-color: var(--border-bright);
     transform: translateY(-4px);
     box-shadow: var(--shadow-soft);
+}
+
+/* ─── PILIERS D'ATELIER (Mise en avant Bento) ─── */
+.tool-card.pillar-tool {
+    border-color: rgba(167, 136, 99, 0.45);
+    background: linear-gradient(145deg, #1f1b16 0%, #151310 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.tool-card.pillar-tool::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold-light) 50%, transparent 100%);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.pillar-badge {
+    position: absolute;
+    top: -10px;
+    right: 18px;
+    background: linear-gradient(135deg, #f3dcaf 0%, #a78863 100%);
+    color: #0b0a08;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.check-benefit-svg {
+    width: 14px;
+    height: 14px;
+    color: #26a69a;
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 6px;
+    flex-shrink: 0;
 }
 
 /* Header de la carte reproduisant fidèlement le bouton du plugin */

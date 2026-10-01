@@ -120,19 +120,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Démo Vidéo Interactive (Play / Pause / Placeholder)
+    // 4. Démo Vidéo Interactive (Lancement, lecture HTML5 & fallback gracieux)
     const videoPlaceholder = document.getElementById('video-placeholder-box');
     const videoElement = document.getElementById('demo-video-player');
     const playBtn = document.getElementById('play-demo-btn');
 
-    if (playBtn && videoElement && videoPlaceholder) {
-        playBtn.addEventListener('click', () => {
-            videoPlaceholder.style.display = 'none';
-            videoElement.style.display = 'block';
-            videoElement.play().catch(() => {
-                showToast('Ajoutez votre fichier vidéo dans le dossier assets/ !');
-            });
+    function launchVideo() {
+        if (!videoElement) return;
+        if (videoPlaceholder) videoPlaceholder.style.display = 'none';
+        videoElement.style.display = 'block';
+        videoElement.play().catch(() => {
+            showToast('Déposez votre vidéo demo.mp4 dans le dossier website/assets/ !');
         });
+    }
+
+    if (playBtn) {
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            launchVideo();
+        });
+    }
+    if (videoPlaceholder) {
+        videoPlaceholder.addEventListener('click', launchVideo);
     }
 
     // 5. Copie dans le presse-papier avec Toast
