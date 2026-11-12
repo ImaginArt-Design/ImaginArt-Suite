@@ -250,18 +250,16 @@
             <!-- Lecteur Vidéo Démo Principal -->
             <div class="video-card">
                 <div class="video-player-wrapper">
-                    <!-- Lecteur vidéo HTML5 natif (actif dès que demo.mp4 est présent dans assets/) -->
-                    <video id="demo-video-player" controls preload="metadata" style="display:none; width:100%; height:100%; object-fit:cover;">
-                        <source src="assets/demo.mp4" type="video/mp4">
-                    </video>
+                    <!-- Lecteur YouTube intégré (chargé au clic pour des performances optimales) -->
+                    <iframe id="demo-youtube-player" title="Imagin'Art Suite V4.0 — Tutoriel Officiel" data-src="https://www.youtube.com/embed/Ic6knXQL9Hw?autoplay=1&amp;rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:none; width:100%; height:100%; border:0;"></iframe>
 
-                    <!-- Zone de lancement vidéo / Placeholder sobre -->
-                    <div class="video-placeholder" id="video-placeholder-box">
-                        <div class="play-button-big" id="play-demo-btn" title="Vidéo en cours de préparation">
+                    <!-- Zone de lancement vidéo avec miniature officielle -->
+                    <div class="video-placeholder" id="video-placeholder-box" style="background: linear-gradient(rgba(8,7,6,0.42), rgba(8,7,6,0.68)), url('img/demo-poster.png') center/cover no-repeat;">
+                        <div class="play-button-big" id="play-demo-btn" title="Lancer le tutoriel officiel">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <h3 class="video-placeholder-title">Vidéo en cours de préparation</h3>
-                        <p class="video-placeholder-sub">Découvrez bientôt la démonstration pas-à-pas de la Suite v4.0 dans Illustrator.</p>
+                        <h3 class="video-placeholder-title">Tutoriel Officiel — Imagin'Art Suite V4.0</h3>
+                        <p class="video-placeholder-sub">Installation, activation et démonstration complète des 16 outils dans Adobe Illustrator (20 min).</p>
                     </div>
                 </div>
 

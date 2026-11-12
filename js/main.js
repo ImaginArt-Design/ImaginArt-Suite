@@ -120,18 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Démo Vidéo Interactive (Lancement, lecture HTML5 & fallback gracieux)
+    // 4. Démo Vidéo Interactive (Lecteur YouTube officiel intégré au clic)
     const videoPlaceholder = document.getElementById('video-placeholder-box');
-    const videoElement = document.getElementById('demo-video-player');
+    const ytPlayer = document.getElementById('demo-youtube-player');
     const playBtn = document.getElementById('play-demo-btn');
 
     function launchVideo() {
-        if (!videoElement) return;
+        if (!ytPlayer) return;
         if (videoPlaceholder) videoPlaceholder.style.display = 'none';
-        videoElement.style.display = 'block';
-        videoElement.play().catch(() => {
-            showToast('Déposez votre vidéo demo.mp4 dans le dossier website/assets/ !');
-        });
+        if (!ytPlayer.src) {
+            ytPlayer.src = ytPlayer.getAttribute('data-src');
+        }
+        ytPlayer.style.display = 'block';
     }
 
     if (playBtn) {
