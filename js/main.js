@@ -128,11 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function launchVideo() {
         if (!ytPlayer) return;
         if (videoPlaceholder) videoPlaceholder.style.display = 'none';
-        if (!ytPlayer.src) {
-            ytPlayer.src = ytPlayer.getAttribute('data-src');
+        if (!ytPlayer.getAttribute('src')) {
+            ytPlayer.setAttribute('src', ytPlayer.getAttribute('data-src'));
         }
         ytPlayer.style.display = 'block';
     }
+    window.launchDemoVideo = launchVideo;
 
     if (playBtn) {
         playBtn.addEventListener('click', (e) => {
