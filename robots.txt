@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imaginart-design.github.io/ImaginArt-Suite/sitemap.xml
