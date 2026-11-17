@@ -423,8 +423,9 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(24, 21, 18, 0.65);
-    border: 1px solid var(--border-subtle);
+    background: rgba(24, 21, 18, 0.75);
+    border: 1px solid rgba(167, 136, 99, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 12px rgba(0, 0, 0, 0.25);
     padding: 7px 16px;
     border-radius: var(--radius-full);
     font-size: 0.84rem;
@@ -435,9 +436,10 @@ p {
 
 .trust-pill:hover {
     border-color: var(--border-bright);
-    background: rgba(34, 30, 25, 0.85);
+    background: rgba(34, 30, 25, 0.9);
     color: var(--text-main);
-    transform: translateY(-1px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 6px 18px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
 }
 
 .trust-icon {
@@ -458,8 +460,11 @@ p {
     margin: 0 auto;
     border-radius: var(--radius-lg);
     background: var(--bg-surface);
-    border: 1px solid rgba(215, 201, 174, 0.22);
-    box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.85), 0 0 50px rgba(167, 136, 99, 0.12);
+    border: 1px solid rgba(215, 201, 174, 0.26);
+    box-shadow: 
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.09),
+        0 25px 65px -15px rgba(0, 0, 0, 0.85), 
+        0 0 50px rgba(167, 136, 99, 0.16);
     overflow: hidden;
     position: relative;
 }
@@ -1369,31 +1374,42 @@ p {
     gap: 24px;
 }
 
-/* ─── CARTE D'OUTIL AVEC BOUTON IDENTIQUE AU PLUGIN ─── */
+/* ─── CARTE D'OUTIL AVEC BOUTON IDENTIQUE AU PLUGIN (FLUTED GLASS & DUAL BEVEL #2) ─── */
 .tool-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+    background: linear-gradient(150deg, #191613 0%, #110f0c 100%);
+    border: 1px solid rgba(167, 136, 99, 0.22);
     border-radius: var(--radius-md);
     padding: 24px;
-    transition: all 0.25s ease;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    box-shadow: 
+        inset 0 1px 1px 0 rgba(240, 212, 160, 0.12),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.6),
+        0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .tool-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-bright);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-soft);
+    background: linear-gradient(150deg, #231e18 0%, #151310 100%);
+    border-color: rgba(240, 212, 160, 0.45);
+    transform: translateY(-5px);
+    box-shadow: 
+        inset 0 1px 1px 0 rgba(240, 212, 160, 0.2),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.6),
+        0 20px 42px -8px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(167, 136, 99, 0.15);
 }
 
 /* ─── PILIERS D'ATELIER (Mise en avant Bento) ─── */
 .tool-card.pillar-tool {
-    border-color: rgba(167, 136, 99, 0.45);
-    background: linear-gradient(145deg, #1f1b16 0%, #151310 100%);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    border-color: rgba(240, 212, 160, 0.45);
+    background: linear-gradient(145deg, #241e17 0%, #14120f 100%);
+    box-shadow: 
+        inset 0 1px 1px 0 rgba(240, 212, 160, 0.25),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.6),
+        0 12px 32px rgba(0, 0, 0, 0.55);
 }
 
 .tool-card.pillar-tool::before {
@@ -1433,23 +1449,26 @@ p {
     flex-shrink: 0;
 }
 
-/* Header de la carte reproduisant fidèlement le bouton du plugin */
+/* Header de la carte reproduisant fidèlement le bouton du plugin (Réfraction Verre #2) */
 .plugin-btn-preview {
     display: flex;
     align-items: center;
-    background: rgba(22, 20, 17, 0.7);
-    border: 1px solid rgba(167, 136, 99, 0.25);
+    background: linear-gradient(180deg, rgba(32, 28, 23, 0.85) 0%, rgba(18, 16, 13, 0.95) 100%);
+    border: 1px solid rgba(167, 136, 99, 0.26);
     border-radius: 10px;
     padding: 10px 14px;
     margin-bottom: 16px;
     gap: 12px;
     position: relative;
     overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease;
 }
 
 .tool-card:hover .plugin-btn-preview {
-    background: rgba(35, 31, 27, 0.85);
-    border-color: var(--gold-primary);
+    background: linear-gradient(180deg, rgba(42, 36, 29, 0.9) 0%, rgba(24, 21, 17, 0.98) 100%);
+    border-color: var(--gold-light);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
 .plugin-btn-text {
@@ -1488,7 +1507,7 @@ p {
     border-radius: 4px;
 }
 
-/* ─── ICÔNES OFFICIELLES DU PLUGIN (MASQUES SVG & DÉGRADÉS) ─── */
+/* ─── ICÔNES OFFICIELLES DU PLUGIN (HALOS STIPPLED TACTILES #19) ─── */
 .tool-icon {
     width: 34px;
     height: 34px;
@@ -1499,25 +1518,26 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.5), 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .tool-icon::before {
     content: '';
     position: absolute;
-    top: -4px;
-    right: -4px;
-    bottom: -4px;
-    left: -4px;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
     border-radius: 12px;
     filter: blur(10px);
-    opacity: 0.4;
+    opacity: 0.45;
     z-index: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .tool-card:hover .tool-icon::before {
-    opacity: 0.8;
+    opacity: 0.88;
+    filter: blur(14px);
 }
 
 .tool-icon::after {
